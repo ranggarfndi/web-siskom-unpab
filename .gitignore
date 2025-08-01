@@ -1,0 +1,57 @@
+# IDE and System Files
+.DS_Store
+Thumbs.db
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+*.sublime-project
+*.sublime-workspace
+
+# Laravel Dependencies
+/vendor/
+
+# Node Dependencies
+/node_modules/
+
+# Environment Files - DO NOT COMMIT THESE!
+.env
+.env.*
+!.env.example
+.env.backup
+
+# Laravel Generated Files & Logs
+/storage/framework/
+/storage/logs/
+/storage/*.key
+/storage/pail
+/storage/app/debugbar/*.json
+*.log
+
+# Uploaded Files (Ignored to keep repo clean)
+# The public symlink is recreated with `php artisan storage:link`
+/public/storage
+# The actual uploaded files
+/storage/app/public/*
+!/storage/app/public/.gitignore
+
+# Vite & Build Assets
+/public/build/
+/public/hot
+
+# Test & Tooling Caches
+.phpactor.json
+.phpunit.result.cache
+phpunit.xml
+
+# Authentication Files
+/auth.json
+
+# Homestead Files
+Homestead.json
+Homestead.yaml
+
+# Filament temporary files
+/storage/app/livewire-tmp/
