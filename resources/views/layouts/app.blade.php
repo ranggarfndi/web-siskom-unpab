@@ -100,7 +100,7 @@
                                     class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
                                 <div x-show="dropdownOpen" x-transition
                                     class="absolute left-1/2 -translate-x-1/2 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
-                                    <a href="#"
+                                    <a href="{{ route('fasilitas.index') }}"
                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Fasilitas
                                         Program Studi</a>
                                     <a href="#"
@@ -267,7 +267,7 @@
                                 </svg>
                             </button>
                             <div x-show="subOpen" x-transition class="pl-4 mt-1 space-y-1">
-                                <a href="#"
+                                <a href="{{ route('fasilitas.index') }}"
                                     class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Fasilitas
                                     Program Studi</a>
                                 <a href="#"
