@@ -6,6 +6,7 @@ use App\Http\Controllers\KontakController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\DosenTetapController;
 use App\Http\Controllers\StrukturOrganisasiController;
 
@@ -58,5 +59,8 @@ Route::get('/kontak', [KontakController::class, 'index'])->name('kontak.index');
 
 // Route untuk Halaman Visi & Misi
 Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi.index');
+
+// Route untuk Halaman Fasilitas
+Route::get('/akademik/fasilitas-program-studi', [FasilitasController::class, 'index'])->name('fasilitas.index');
 
 require __DIR__.'/auth.php';
