@@ -7,9 +7,10 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\FasilitasController;
-use App\Http\Controllers\FasilitasUniversitasController;
 use App\Http\Controllers\DosenTetapController;
+use App\Http\Controllers\SebaranMataKuliahController;
 use App\Http\Controllers\StrukturOrganisasiController;
+use App\Http\Controllers\FasilitasUniversitasController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -66,5 +67,8 @@ Route::get('/akademik/fasilitas-program-studi', [FasilitasController::class, 'in
 
 // Route untuk Halaman Fasilitas Universitas
 Route::get('/akademik/fasilitas-universitas', [FasilitasUniversitasController::class, 'index'])->name('fasilitas-universitas.index');
+
+// Route untuk Halaman Sebaran Mata Kuliah
+Route::get('/akademik/sebaran-mata-kuliah', [SebaranMataKuliahController::class, 'index'])->name('sebaran-matkul.index');
 
 require __DIR__.'/auth.php';
