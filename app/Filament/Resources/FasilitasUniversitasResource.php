@@ -2,8 +2,8 @@
 
     namespace App\Filament\Resources;
 
-    use App\Filament\Resources\FasilitasResource\Pages;
-    use App\Models\Fasilitas;
+    use App\Filament\Resources\FasilitasUniversitasResource\Pages;
+    use App\Models\FasilitasUniversitas;
     use Filament\Forms;
     use Filament\Forms\Form;
     use Filament\Resources\Resource;
@@ -12,14 +12,14 @@
     use Illuminate\Database\Eloquent\Builder;
     use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-    class FasilitasResource extends Resource
+    class FasilitasUniversitasResource extends Resource
     {
-        protected static ?string $model = Fasilitas::class;
+        protected static ?string $model = FasilitasUniversitas::class;
 
-        protected static ?string $navigationIcon = 'heroicon-o-photo';
-        protected static ?string $navigationLabel = 'Galeri Fasilitas Prodi';
-        protected static ?string $modelLabel = 'Fasilitas';
-        protected static ?string $pluralModelLabel = 'Galeri Fasilitas Prodi';
+        protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
+        protected static ?string $navigationLabel = 'Galeri Fasilitas UNPAB';
+        protected static ?string $modelLabel = 'Fasilitas Universitas';
+        protected static ?string $pluralModelLabel = 'Galeri Fasilitas UNPAB';
 
 
         public static function form(Form $form): Form
@@ -33,7 +33,7 @@
                     Forms\Components\FileUpload::make('gambar')
                         ->required()
                         ->image()
-                        ->directory('foto-fasilitas') // Gambar akan disimpan di storage/app/public/foto-fasilitas
+                        ->directory('foto-fasilitas-unpab') // Folder penyimpanan yang berbeda
                         ->imageEditor()
                         ->columnSpanFull(),
                     Forms\Components\RichEditor::make('deskripsi')
@@ -72,7 +72,7 @@
                         Tables\Actions\DeleteBulkAction::make(),
                     ]),
                 ])
-                ->defaultSort('created_at', 'desc'); // Mengurutkan berdasarkan data terbaru
+                ->defaultSort('created_at', 'desc');
         }
         
         public static function getRelations(): array
@@ -85,9 +85,9 @@
         public static function getPages(): array
         {
             return [
-                'index' => Pages\ListFasilitas::route('/'),
-                'create' => Pages\CreateFasilitas::route('/create'),
-                'edit' => Pages\EditFasilitas::route('/{record}/edit'),
+                'index' => Pages\ListFasilitasUniversitas::route('/'),
+                'create' => Pages\CreateFasilitasUniversitas::route('/create'),
+                'edit' => Pages\EditFasilitasUniversitas::route('/{record}/edit'),
             ];
         }    
     }
