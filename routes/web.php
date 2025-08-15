@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VisiMisiController;
 use App\Http\Controllers\FasilitasController;
 use App\Http\Controllers\DosenTetapController;
+use App\Http\Controllers\ProspekKerjaController;
 use App\Http\Controllers\SebaranMataKuliahController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\FasilitasUniversitasController;
@@ -70,5 +71,8 @@ Route::get('/akademik/fasilitas-universitas', [FasilitasUniversitasController::c
 
 // Route untuk Halaman Sebaran Mata Kuliah
 Route::get('/akademik/sebaran-mata-kuliah', [SebaranMataKuliahController::class, 'index'])->name('sebaran-matkul.index');
+
+// Route untuk Halaman Prospek Kerja Lulusan
+Route::get('/akademik/prospek-kerja-lulusan', [ProspekKerjaController::class, 'index'])->name('prospek-kerja.index');
 
 require __DIR__.'/auth.php';
