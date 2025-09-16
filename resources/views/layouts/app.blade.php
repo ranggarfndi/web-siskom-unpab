@@ -29,144 +29,146 @@
                     </a>
 
                     <!-- Desktop Navigation -->
-                        <div class="hidden md:flex items-center space-x-8">
-                            <!-- Menu Item: Beranda -->
-                            <div class="relative group">
-                                <a href="{{ route('beranda') }}"
-                                    class="text-gray-700 transition duration-300 py-2 text-base">Beranda</a>
-                                <span
-                                    class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('beranda') ? 'w-full' : 'w-0' }}"></span>
-                            </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <!-- Menu Item: Beranda -->
+                        <div class="relative group">
+                            <a href="{{ route('beranda') }}"
+                                class="text-gray-700 transition duration-300 py-2 text-base">Beranda</a>
+                            <span
+                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('beranda') ? 'w-full' : 'w-0' }}"></span>
+                        </div>
 
-                            <!-- Menu Item: Profil (Dropdown) -->
-                            @php $isProfilActive = request()->routeIs(['visi-misi.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
-                            <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
-                                @mouseleave="dropdownOpen = false" class="relative group">
-                                <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
-                                    <span>Profil</span>
-                                    <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
-                                        :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <span
-                                    class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ $isProfilActive ? 'w-full' : 'w-0' }}"></span>
-                                <div x-show="dropdownOpen" x-transition
-                                    class="absolute left-1/2 -translate-x-1/2 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
-                                    <a href="{{ route('visi-misi.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Visi
-                                        & Misi</a>
-                                    <a href="{{ route('struktur-organisasi.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Struktur
-                                        Organisasi</a>
-                                    <a href="{{ route('dosen-tetap.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Dosen
-                                        Tetap</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Alumni</a>
-                                    <a href="{{ route('kontak.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Kontak</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Riset
-                                        & Pengabdian</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Kemitraan</a>
-                                </div>
-                            </div>
-
-                            <!-- Menu Item: Artikel -->
-                            <div class="relative group">
-                                <a href="{{ route('artikel.index') }}"
-                                    class="text-gray-700 transition duration-300 py-2 text-base">Artikel</a>
-                                <span
-                                    class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('artikel.*') ? 'w-full' : 'w-0' }}"></span>
-                            </div>
-
-                            <!-- Menu Item: Akademik (Dropdown) -->
-                            <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
-                                @mouseleave="dropdownOpen = false" class="relative group">
-                                <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
-                                    <span>Akademik</span>
-                                    <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
-                                        :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <span
-                                    class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
-                                <div x-show="dropdownOpen" x-transition
-                                    class="absolute left-1/2 -translate-x-1/2 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
-                                    <a href="{{ route('fasilitas.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Fasilitas
-                                        Program Studi</a>
-                                    <a href="{{ route('fasilitas-universitas.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Fasilitas
-                                        UNPAB</a>
-                                    <a href="{{ route('sebaran-matkul.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Sebaran
-                                        Mata Kuliah</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Capaian
-                                        Profil Lulusan</a>
-                                    <a href="{{ route('prospek-kerja.index') }}"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Prospek
-                                        Kerja Lulusan</a>
-                                </div>
-                            </div>
-
-                            <!-- Menu Item: Biaya Kuliah -->
-                            <div class="relative group">
-                                <a href="#" class="text-gray-700 transition duration-300 py-2 text-base">Biaya
-                                    Kuliah</a>
-                                <span
-                                    class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
-                            </div>
-
-                            <!-- Menu Item: Pendaftaran (Dropdown) -->
-                            <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
-                                @mouseleave="dropdownOpen = false" class="relative group">
-                                <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
-                                    <span>Pendaftaran</span>
-                                    <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
-                                        :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <span
-                                    class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
-                                <div x-show="dropdownOpen" x-transition
-                                    class="absolute right-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jurusan
-                                        UNPAB</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Prosedur
-                                        Pendaftaran</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jadwal
-                                        Kuliah</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Syarat
-                                        Pendaftaran</a>
-                                    <a href="#"
-                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Cara
-                                        Pembayaran</a>
-                                </div>
-                            </div>
-
-                            <!-- Menu Item: Portal UNPAB -->
-                            <div class="relative group">
-                                <a href="https://mahasiswa.pancabudi.ac.id/" target="blank" class="text-gray-700 transition duration-300 py-2 text-base">Portal UNPAB</a>
-                                <span
-                                    class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                        <!-- Menu Item: Profil (Dropdown) -->
+                        @php $isProfilActive = request()->routeIs(['visi-misi.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
+                        <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
+                            @mouseleave="dropdownOpen = false" class="relative group">
+                            <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
+                                <span>Profil</span>
+                                <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
+                                    :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <span
+                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ $isProfilActive ? 'w-full' : 'w-0' }}"></span>
+                            <div x-show="dropdownOpen" x-transition
+                                class="absolute left-1/2 -translate-x-1/2 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
+                                <a href="{{ route('visi-misi.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Visi
+                                    & Misi</a>
+                                <a href="{{ route('struktur-organisasi.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Struktur
+                                    Organisasi</a>
+                                <a href="{{ route('dosen-tetap.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Dosen
+                                    Tetap</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Alumni</a>
+                                <a href="{{ route('kontak.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Kontak</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Riset
+                                    & Pengabdian</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Kemitraan</a>
                             </div>
                         </div>
+
+                        <!-- Menu Item: Artikel -->
+                        <div class="relative group">
+                            <a href="{{ route('artikel.index') }}"
+                                class="text-gray-700 transition duration-300 py-2 text-base">Artikel</a>
+                            <span
+                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('artikel.*') ? 'w-full' : 'w-0' }}"></span>
+                        </div>
+
+                        <!-- Menu Item: Akademik (Dropdown) -->
+                        <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
+                            @mouseleave="dropdownOpen = false" class="relative group">
+                            <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
+                                <span>Akademik</span>
+                                <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
+                                    :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <span
+                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                            <div x-show="dropdownOpen" x-transition
+                                class="absolute left-1/2 -translate-x-1/2 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
+                                <a href="{{ route('fasilitas.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Fasilitas
+                                    Program Studi</a>
+                                <a href="{{ route('fasilitas-universitas.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Fasilitas
+                                    UNPAB</a>
+                                <a href="{{ route('sebaran-matkul.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Sebaran
+                                    Mata Kuliah</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Capaian
+                                    Profil Lulusan</a>
+                                <a href="{{ route('prospek-kerja.index') }}"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Prospek
+                                    Kerja Lulusan</a>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item: Biaya Kuliah -->
+                        <div class="relative group">
+                            <a href="{{ route('biaya-kuliah.index') }}"
+                                class="text-gray-700 transition duration-300 py-2 text-base">Biaya
+                                Kuliah</a>
+                            <span
+                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                        </div>
+
+                        <!-- Menu Item: Pendaftaran (Dropdown) -->
+                        <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
+                            @mouseleave="dropdownOpen = false" class="relative group">
+                            <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
+                                <span>Pendaftaran</span>
+                                <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
+                                    :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <span
+                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                            <div x-show="dropdownOpen" x-transition
+                                class="absolute right-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jurusan
+                                    UNPAB</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Prosedur
+                                    Pendaftaran</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jadwal
+                                    Kuliah</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Syarat
+                                    Pendaftaran</a>
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Cara
+                                    Pembayaran</a>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item: Portal UNPAB -->
+                        <div class="relative group">
+                            <a href="https://mahasiswa.pancabudi.ac.id/" target="blank"
+                                class="text-gray-700 transition duration-300 py-2 text-base">Portal UNPAB</a>
+                            <span
+                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                        </div>
+                    </div>
 
                     <!-- Social Icons -->
                     <div class="hidden lg:flex items-center space-x-4">
@@ -286,7 +288,7 @@
                         </div>
 
                         <!-- Mobile: Biaya Kuliah -->
-                        <a href="#"
+                        <a href="{{ route('biaya-kuliah.index') }}"
                             class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">Biaya
                             Kuliah</a>
 
