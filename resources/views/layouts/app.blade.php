@@ -21,28 +21,31 @@
 
         <!-- ===== Header & Navigation (REVISED) ===== -->
         <header class="bg-white shadow-md sticky top-0 z-50">
-            <nav x-data="{ mobileMenuOpen: false }" class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Tambahkan `relative` agar menu mobile bisa diposisikan terhadap header -->
+            <nav x-data="{ mobileMenuOpen: false }" class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div class="flex items-center justify-between h-20">
                     <!-- Logo -->
-                    <a href="/" class="text-2xl font-bold text-purple-700">
-                        SISTEM KOMPUTER
+                    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="{{ asset('images/logo-navbar-siskom.png') }}" class="h-8"
+                            alt="Sistem Komputer Logo" />
                     </a>
 
                     <!-- Desktop Navigation -->
-                    <div class="hidden md:flex items-center space-x-8">
+                    <div class="hidden lg:flex items-center space-x-8">
                         <!-- Menu Item: Beranda -->
                         <div class="relative group">
                             <a href="{{ route('beranda') }}"
-                                class="text-gray-700 transition duration-300 py-2 text-base">Beranda</a>
+                                class="text-gray-700 hover:text-purple-700 transition duration-300 py-2 text-base">Beranda</a>
                             <span
-                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('beranda') ? 'w-full' : 'w-0' }}"></span>
+                                class="absolute bottom-[-6px] left-0 h-0.5 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('beranda') ? 'w-full' : 'w-0' }}"></span>
                         </div>
 
                         <!-- Menu Item: Profil (Dropdown) -->
                         @php $isProfilActive = request()->routeIs(['visi-misi.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
                         <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
                             @mouseleave="dropdownOpen = false" class="relative group">
-                            <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
+                            <button
+                                class="text-gray-700 hover:text-purple-700 transition duration-300 py-2 text-base flex items-center">
                                 <span>Profil</span>
                                 <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
                                     :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
@@ -52,9 +55,14 @@
                                 </svg>
                             </button>
                             <span
-                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ $isProfilActive ? 'w-full' : 'w-0' }}"></span>
-                            <div x-show="dropdownOpen" x-transition
-                                class="absolute left-1/2 -translate-x-1/2 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
+                                class="absolute bottom-[-6px] left-0 h-0.5 bg-purple-700 transition-all duration-300 group-hover:w-full {{ $isProfilActive ? 'w-full' : 'w-0' }}"></span>
+                            <div x-show="dropdownOpen" x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 transform scale-95"
+                                x-transition:enter-end="opacity-100 transform scale-100"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 transform scale-100"
+                                x-transition:leave-end="opacity-0 transform scale-95"
+                                class="absolute left-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20 origin-top-left">
                                 <a href="{{ route('visi-misi.index') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Visi
                                     & Misi</a>
@@ -76,18 +84,19 @@
                             </div>
                         </div>
 
-                        <!-- Menu Item: Artikel -->
+                        <!-- Menu lainnya... -->
                         <div class="relative group">
                             <a href="{{ route('artikel.index') }}"
-                                class="text-gray-700 transition duration-300 py-2 text-base">Artikel</a>
+                                class="text-gray-700 hover:text-purple-700 transition duration-300 py-2 text-base">Artikel</a>
                             <span
-                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('artikel.*') ? 'w-full' : 'w-0' }}"></span>
+                                class="absolute bottom-[-6px] left-0 h-0.5 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('artikel.*') ? 'w-full' : 'w-0' }}"></span>
                         </div>
 
-                        <!-- Menu Item: Akademik (Dropdown) -->
+                        @php $isAkademikActive = request()->routeIs(['fasilitas.index', 'fasilitas-universitas.index', 'sebaran-matkul.index', 'prospek-kerja.index']); @endphp
                         <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
                             @mouseleave="dropdownOpen = false" class="relative group">
-                            <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
+                            <button
+                                class="text-gray-700 hover:text-purple-700 transition duration-300 py-2 text-base flex items-center">
                                 <span>Akademik</span>
                                 <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
                                     :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
@@ -97,9 +106,14 @@
                                 </svg>
                             </button>
                             <span
-                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
-                            <div x-show="dropdownOpen" x-transition
-                                class="absolute left-1/2 -translate-x-1/2 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
+                                class="absolute bottom-[-6px] left-0 h-0.5 bg-purple-700 transition-all duration-300 group-hover:w-full {{ $isAkademikActive ? 'w-full' : 'w-0' }}"></span>
+                            <div x-show="dropdownOpen" x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 transform scale-95"
+                                x-transition:enter-end="opacity-100 transform scale-100"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 transform scale-100"
+                                x-transition:leave-end="opacity-0 transform scale-95"
+                                class="absolute left-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20 origin-top-left">
                                 <a href="{{ route('fasilitas.index') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Fasilitas
                                     Program Studi</a>
@@ -118,19 +132,18 @@
                             </div>
                         </div>
 
-                        <!-- Menu Item: Biaya Kuliah -->
                         <div class="relative group">
                             <a href="{{ route('biaya-kuliah.index') }}"
-                                class="text-gray-700 transition duration-300 py-2 text-base">Biaya
+                                class="text-gray-700 hover:text-purple-700 transition duration-300 py-2 text-base">Biaya
                                 Kuliah</a>
                             <span
-                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                                class="absolute bottom-[-6px] left-0 h-0.5 bg-purple-700 transition-all duration-300 group-hover:w-full {{ request()->routeIs('biaya-kuliah.index') ? 'w-full' : 'w-0' }}"></span>
                         </div>
 
-                        <!-- Menu Item: Pendaftaran (Dropdown) -->
                         <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
                             @mouseleave="dropdownOpen = false" class="relative group">
-                            <button class="text-gray-700 transition duration-300 py-2 text-base flex items-center">
+                            <button
+                                class="text-gray-700 hover:text-purple-700 transition duration-300 py-2 text-base flex items-center">
                                 <span>Pendaftaran</span>
                                 <svg class="w-4 h-4 ml-1 transform transition-transform duration-300"
                                     :class="{ 'rotate-180': dropdownOpen }" fill="none" stroke="currentColor"
@@ -140,9 +153,14 @@
                                 </svg>
                             </button>
                             <span
-                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
-                            <div x-show="dropdownOpen" x-transition
-                                class="absolute right-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20">
+                                class="absolute bottom-[-6px] left-0 h-0.5 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                            <div x-show="dropdownOpen" x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 transform scale-95"
+                                x-transition:enter-end="opacity-100 transform scale-100"
+                                x-transition:leave="transition ease-in duration-150"
+                                x-transition:leave-start="opacity-100 transform scale-100"
+                                x-transition:leave-end="opacity-0 transform scale-95"
+                                class="absolute right-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20 origin-top-right">
                                 <a href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jurusan
                                     UNPAB</a>
@@ -160,68 +178,67 @@
                                     Pembayaran</a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Menu Item: Portal UNPAB -->
-                        <div class="relative group">
-                            <a href="https://mahasiswa.pancabudi.ac.id/" target="blank"
-                                class="text-gray-700 transition duration-300 py-2 text-base">Portal UNPAB</a>
-                            <span
-                                class="absolute bottom-[-8px] left-0 h-1 bg-purple-700 transition-all duration-300 group-hover:w-full w-0"></span>
+                    <!-- Social Icons & Mobile Menu Button -->
+                    <div class="flex items-center">
+                        <div class="hidden sm:flex items-center space-x-4">
+                            <a href="#" aria-label="Facebook"
+                                class="text-gray-500 hover:text-purple-700 transition"><svg class="w-6 h-6"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                                </svg></a>
+                            <a href="#" aria-label="Instagram"
+                                class="text-gray-500 hover:text-purple-700 transition"><svg class="w-6 h-6"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049 1.064.218 1.791.465 2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+                                        clip-rule="evenodd" />
+                                </svg></a>
+                            <a href="#" aria-label="YouTube"
+                                class="text-gray-500 hover:text-purple-700 transition"><svg class="w-6 h-6"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814c-.23.861-.907 1.538-1.768 1.768C18.218 19 12 19 12 19s-6.218 0-7.812-1.414c-.861-.23-1.538-.907-1.768-1.768C2.002 15.22 2 12 2 12s0-3.22.42-4.814c.23-.861.907-1.538 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.5 15.5V8.5l6 3.5-6 3.5z"
+                                        clip-rule="evenodd" />
+                                </svg></a>
                         </div>
-                    </div>
-
-                    <!-- Social Icons -->
-                    <div class="hidden lg:flex items-center space-x-4">
-                        <a href="#" aria-label="Facebook"
-                            class="text-gray-500 hover:text-purple-700 transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Instagram"
-                            class="text-gray-500 hover:text-purple-700 transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zM12 0C8.74 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.26 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="YouTube"
-                            class="text-gray-500 hover:text-purple-700 transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.701V4.115l8.817 4.885-8.817 4.885z" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Mobile Menu Button -->
-                    <div class="md:hidden">
-                        <button @click="mobileMenuOpen = !mobileMenuOpen"
-                            class="p-2 rounded-md text-gray-700 hover:bg-gray-100">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path :class="{ 'hidden': mobileMenuOpen, 'inline-flex': !mobileMenuOpen }"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16M4 18h16" />
-                                <path :class="{ 'hidden': !mobileMenuOpen, 'inline-flex': mobileMenuOpen }"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
+                        <div class="lg:hidden ml-4">
+                            <button @click="mobileMenuOpen = !mobileMenuOpen"
+                                class="p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-500">
+                                <span class="sr-only">Buka menu</span>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path :class="{ 'hidden': mobileMenuOpen, 'inline-flex': !mobileMenuOpen }"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16" />
+                                    <path :class="{ 'hidden': !mobileMenuOpen, 'inline-flex': mobileMenuOpen }"
+                                        stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Mobile Menu -->
-                <div x-show="mobileMenuOpen" x-transition class="md:hidden pb-4">
-                    <div class="pt-4 space-y-1">
-                        <!-- Mobile: Beranda -->
+                <!-- Mobile Menu Panel -->
+                <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 -translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave-end="opacity-0 -translate-y-4"
+                    class="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-40"
+                    @click.away="mobileMenuOpen = false" x-cloak>
+                    <div class="pt-4 pb-4 space-y-1">
+                        <!-- Konten mobile menu disalin dari yang lama... -->
                         <a href="{{ route('beranda') }}"
-                            class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium {{ request()->routeIs('beranda') ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">Beranda</a>
+                            class="block pl-4 pr-4 py-2 border-l-4 text-base font-medium {{ request()->routeIs('beranda') ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">Beranda</a>
 
-                        <!-- Mobile: Profil (Accordion) -->
+                        @php $isProfilActive = request()->routeIs(['visi-misi.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
                         <div x-data="{ subOpen: {{ $isProfilActive ? 'true' : 'false' }} }">
                             <button @click="subOpen = !subOpen"
-                                class="w-full flex justify-between items-center pl-3 pr-4 py-2 border-l-4 text-base font-medium {{ $isProfilActive ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">
+                                class="w-full flex justify-between items-center pl-4 pr-4 py-2 border-l-4 text-base font-medium {{ $isProfilActive ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">
                                 <span>Profil</span>
                                 <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': subOpen }"
                                     fill="currentColor" viewBox="0 0 20 20">
@@ -230,36 +247,35 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </button>
-                            <div x-show="subOpen" x-transition class="pl-4 mt-1 space-y-1">
+                            <div x-show="subOpen" x-transition class="pl-8 mt-1 space-y-1">
                                 <a href="{{ route('visi-misi.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Visi
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('visi-misi.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Visi
                                     & Misi</a>
                                 <a href="{{ route('struktur-organisasi.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium {{ request()->routeIs('struktur-organisasi.*') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Struktur
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('struktur-organisasi.*') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Struktur
                                     Organisasi</a>
                                 <a href="{{ route('dosen-tetap.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium {{ request()->routeIs('dosen-tetap.*') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Dosen
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('dosen-tetap.*') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Dosen
                                     Tetap</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Alumni</a>
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Alumni</a>
                                 <a href="{{ route('kontak.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium {{ request()->routeIs('kontak.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Kontak</a>
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('kontak.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Kontak</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Riset
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Riset
                                     & Pengabdian</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Kemitraan</a>
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Kemitraan</a>
                             </div>
                         </div>
 
-                        <!-- Mobile: Artikel -->
                         <a href="{{ route('artikel.index') }}"
-                            class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium {{ request()->routeIs('artikel.*') ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">Artikel</a>
+                            class="block pl-4 pr-4 py-2 border-l-4 text-base font-medium {{ request()->routeIs('artikel.*') ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">Artikel</a>
 
-                        <!-- Mobile: Akademik (Accordion) -->
-                        <div x-data="{ subOpen: false }">
+                        @php $isAkademikActive = request()->routeIs(['fasilitas.index', 'fasilitas-universitas.index', 'sebaran-matkul.index', 'prospek-kerja.index']); @endphp
+                        <div x-data="{ subOpen: {{ $isAkademikActive ? 'true' : 'false' }} }">
                             <button @click="subOpen = !subOpen"
-                                class="w-full flex justify-between items-center pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">
+                                class="w-full flex justify-between items-center pl-4 pr-4 py-2 border-l-4 text-base font-medium {{ $isAkademikActive ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">
                                 <span>Akademik</span>
                                 <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': subOpen }"
                                     fill="currentColor" viewBox="0 0 20 20">
@@ -268,34 +284,32 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </button>
-                            <div x-show="subOpen" x-transition class="pl-4 mt-1 space-y-1">
+                            <div x-show="subOpen" x-transition class="pl-8 mt-1 space-y-1">
                                 <a href="{{ route('fasilitas.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Fasilitas
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('fasilitas.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Fasilitas
                                     Program Studi</a>
                                 <a href="{{ route('fasilitas-universitas.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Fasilitas
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('fasilitas-universitas.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Fasilitas
                                     UNPAB</a>
                                 <a href="{{ route('sebaran-matkul.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Sebaran
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('sebaran-matkul.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Sebaran
                                     Mata Kuliah</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Capaian
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Capaian
                                     Profil Lulusan</a>
                                 <a href="{{ route('prospek-kerja.index') }}"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Prospek
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('prospek-kerja.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Prospek
                                     Kerja Lulusan</a>
                             </div>
                         </div>
 
-                        <!-- Mobile: Biaya Kuliah -->
                         <a href="{{ route('biaya-kuliah.index') }}"
-                            class="block pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">Biaya
+                            class="block pl-4 pr-4 py-2 border-l-4 text-base font-medium {{ request()->routeIs('biaya-kuliah.index') ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">Biaya
                             Kuliah</a>
 
-                        <!-- Mobile: Pendaftaran (Accordion) -->
                         <div x-data="{ subOpen: false }">
                             <button @click="subOpen = !subOpen"
-                                class="w-full flex justify-between items-center pl-3 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">
+                                class="w-full flex justify-between items-center pl-4 pr-4 py-2 border-l-4 text-base font-medium border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800">
                                 <span>Pendaftaran</span>
                                 <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': subOpen }"
                                     fill="currentColor" viewBox="0 0 20 20">
@@ -304,21 +318,21 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </button>
-                            <div x-show="subOpen" x-transition class="pl-4 mt-1 space-y-1">
+                            <div x-show="subOpen" x-transition class="pl-8 mt-1 space-y-1">
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jurusan
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jurusan
                                     UNPAB</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Prosedur
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Prosedur
                                     Pendaftaran</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jadwal
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jadwal
                                     Kuliah</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Syarat
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Syarat
                                     Pendaftaran</a>
                                 <a href="#"
-                                    class="block pl-10 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Cara
+                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Cara
                                     Pembayaran</a>
                             </div>
                         </div>
@@ -364,7 +378,8 @@
                             <li><a href="{{ route('struktur-organisasi.index') }}"
                                     class="text-gray-400 hover:text-white transition">Struktur Organisasi</a></li>
                             <li><a href="{{ route('dosen-tetap.index') }}"
-                                    class="text-gray-400 hover:text-white transition">Dosen Tetap</a></li>
+                                    class="text-gray-400 hover:text-white transition">Dosen Tetap</a>
+                            </li>
                             <li><a href="{{ route('artikel.index') }}"
                                     class="text-gray-400 hover:text-white transition">Artikel</a></li>
                             <li><a href="{{ route('kontak.index') }}"
@@ -425,14 +440,17 @@
                         </a>
                         <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white transition">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.585-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.585-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.585.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zM12 0C8.74 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98C23.986 15.667 24 15.26 24 12s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.26 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.153 2.153c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.153 2.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.153-2.153c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049 1.064.218 1.791.465 2.427a4.902 4.902 0 012.153-2.153c.636-.247 1.363-.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.406-11.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </a>
+                        <!-- YOUTUBE ICON (FIXED) -->
                         <a href="#" aria-label="YouTube" class="text-gray-400 hover:text-white transition">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.701V4.115l8.817 4.885-8.817 4.885z" />
+                                <path fill-rule="evenodd"
+                                    d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.78 22 12 22 12s0 3.22-.42 4.814c-.23.861-.907 1.538-1.768 1.768C18.218 19 12 19 12 19s-6.218 0-7.812-1.414c-.861-.23-1.538-.907-1.768-1.768C2.002 15.22 2 12 2 12s0-3.22.42-4.814c.23-.861.907-1.538 1.768-1.768C5.782 5 12 5 12 5s6.218 0 7.812.418zM9.5 15.5V8.5l6 3.5-6 3.5z"
+                                    clip-rule="evenodd" />
                             </svg>
                         </a>
                     </div>
