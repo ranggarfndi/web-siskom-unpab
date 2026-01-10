@@ -67,9 +67,6 @@ Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('vis
 // Route untuk Halaman Fasilitas
 Route::get('/akademik/fasilitas-program-studi', [FasilitasController::class, 'index'])->name('fasilitas.index');
 
-// Route untuk Halaman Fasilitas Universitas
-Route::get('/akademik/fasilitas-universitas', [FasilitasUniversitasController::class, 'index'])->name('fasilitas-universitas.index');
-
 // Route untuk Halaman Sebaran Mata Kuliah
 Route::get('/akademik/sebaran-mata-kuliah', [SebaranMataKuliahController::class, 'index'])->name('sebaran-matkul.index');
 
