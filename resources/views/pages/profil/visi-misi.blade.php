@@ -1,83 +1,85 @@
-    <x-app-layout>
-        <!-- Page Header -->
-        <div class="bg-gray-50">
-            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-center">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Visi & Misi</h1>
-                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Arah dan tujuan Program Studi Sistem Komputer dalam mencetak generasi unggul.</p>
+<x-app-layout>
+    <!-- Background dengan pola halus -->
+    <div class="min-h-screen bg-purple-50 py-16 flex items-center justify-center">
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Visi & Misi</h1>
+                <p class="text-lg text-gray-600">Arah masa depan Program Studi Sistem Komputer</p>
             </div>
-        </div>
 
-        <!-- Content Section -->
-        <div class="py-16 sm:py-24 bg-white">
-            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
                 
-                <!-- Visi Section -->
-                <div class="text-center">
-                    <h2 class="text-3xl font-bold text-purple-700 tracking-wider uppercase">Visi</h2>
-                    <div class="mt-6 max-w-3xl mx-auto">
-                        <div class="bg-purple-50 border-l-4 border-purple-500 p-8 rounded-r-lg">
-                            <p class="text-xl md:text-2xl text-gray-800 italic leading-relaxed">
-                                "Menjadi program studi Sistem Komputer yang unggul dan berdaya saing global dalam bidang teknologi cerdas dan sistem siber-fisik pada tahun 2030."
+                <!-- KOLOM 1: FOTO KAPRODI -->
+                <div class="w-full md:w-1/3 flex flex-col items-center">
+                    <!-- Frame Foto Lingkaran/Lonjong -->
+                    <div class="relative w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-gray-200">
+                        <!-- GANTI SRC INI DENGAN FOTO KAPRODI ASLI -->
+                        {{-- <!-- Contoh: src="{{ asset('images/kaprodi.jpg') }}" --> --}}
+                        <img src="{{ asset ('images/kaprodi.png') }}" 
+                             alt="Kaprodi Sistem Komputer" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Label Nama -->
+                    <div class="mt-6 text-center">
+                        <div class="bg-white py-2 px-6 rounded-full shadow-md border border-purple-100 inline-block">
+                            <h3 class="text-md font-bold text-gray-900">Zulfahmi Syahputra, S.Kom., M.Kom.</h3>
+                            <p class="text-sm text-purple-600 font-semibold">KA. Prodi Sistem Komputer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOLOM 2: GELEMBUNG BICARA (VISI MISI) -->
+                <div class="w-full md:w-2/3 relative">
+                    <!-- Segitiga Gelembung (Tail) - Desktop (Kiri) -->
+                    <div class="hidden md:block absolute top-20 -left-4 w-8 h-8 bg-white border-l border-b border-gray-200 transform rotate-45 z-10"></div>
+                    
+                    <!-- Segitiga Gelembung (Tail) - Mobile (Atas) -->
+                    <div class="md:hidden absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-white border-t border-l border-gray-200 transform rotate-45 z-10"></div>
+
+                    <!-- Kotak Konten -->
+                    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-200 relative z-0">
+                        
+                        <!-- VISI -->
+                        <div class="mb-8">
+                            <span class="inline-block bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wider uppercase">Visi Kami</span>
+                            <p class="text-xl md:text-2xl font-medium text-gray-800 leading-relaxed italic">
+                                "Menghasilkan lulusan yang mampu mengimpelementasikan Ilmu Pengetahuan dan Teknologi (IPTEK) pada bidang ilmu Sistem Komputer serta Bermanfaat Bagi Kemaslahatan Umat."
                             </p>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Misi Section -->
-                <div class="mt-20">
-                    <h2 class="text-3xl font-bold text-purple-700 tracking-wider uppercase text-center">Misi</h2>
-                    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-                        
-                        <!-- Misi Item 1 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-600 text-white">
-                                    <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-bold text-gray-900">Pendidikan Berkualitas</h3>
-                                <p class="mt-2 text-base text-gray-600">Menyelenggarakan pendidikan tinggi yang berkualitas dan relevan dengan perkembangan industri untuk menghasilkan lulusan yang kompeten dan profesional.</p>
-                            </div>
-                        </div>
+                        <hr class="border-gray-100 my-6">
 
-                        <!-- Misi Item 2 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-600 text-white">
-                                    <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9"></path></svg>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-bold text-gray-900">Riset Inovatif</h3>
-                                <p class="mt-2 text-base text-gray-600">Mengembangkan penelitian inovatif di bidang sistem cerdas dan teknologi siber-fisik yang memberikan kontribusi nyata bagi masyarakat dan ilmu pengetahuan.</p>
-                            </div>
-                        </div>
-
-                        <!-- Misi Item 3 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-600 text-white">
-                                    <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-bold text-gray-900">Pengabdian Masyarakat</h3>
-                                <p class="mt-2 text-base text-gray-600">Melaksanakan kegiatan pengabdian kepada masyarakat dengan menerapkan teknologi tepat guna untuk meningkatkan kesejahteraan dan kemandirian bangsa.</p>
-                            </div>
-                        </div>
-
-                        <!-- Misi Item 4 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-full bg-purple-600 text-white">
-                                    <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg leading-6 font-bold text-gray-900">Kemitraan Strategis</h3>
-                                <p class="mt-2 text-base text-gray-600">Membangun kemitraan strategis dengan industri, pemerintah, dan institusi pendidikan lain di tingkat nasional maupun internasional.</p>
-                            </div>
+                        <!-- MISI -->
+                        <div>
+                            <span class="inline-block bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 tracking-wider uppercase">Misi Kami</span>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mt-1 mr-4 text-purple-600 font-bold text-sm">1</div>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Melaksanakan Tridharma Perguruan Tinggi Pendidikan, Penelitian dan Pengabdian sesuai bidang keilmuan Sistem Komputer di tingkat nasional dan internasional.
+                                    </p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mt-1 mr-4 text-purple-600 font-bold text-sm">2</div>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Melakukan pengembangan Sumber Daya Manusia Dosen dan Tenaga Kependidikan dalam mendukung pencapaian Profil Lulusan.
+                                    </p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mt-1 mr-4 text-purple-600 font-bold text-sm">3</div>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Peningkatan kualitas dan kuantitas sarana prasarana Pendidikan, Penelitian dan Pengabdian dalam mendukung pencapaian Profil Lulusan.
+                                    </p>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mt-1 mr-4 text-purple-600 font-bold text-sm">4</div>
+                                    <p class="text-gray-600 text-lg leading-relaxed">
+                                        Memperluas jejaring Kerjasama melalui peningkatan kualitas dan kuantitas kerjasama tingkat nasional dan internasional.
+                                    </p>
+                                </li>
+                            </ul>
                         </div>
 
                     </div>
@@ -85,5 +87,5 @@
 
             </div>
         </div>
-    </x-app-layout>
-    
+    </div>
+</x-app-layout>
