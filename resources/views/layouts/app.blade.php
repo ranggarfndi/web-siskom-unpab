@@ -171,7 +171,7 @@
                                 <a href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jadwal
                                     Kuliah</a>
-                                <a href="#"
+                                <a href="{{ route('pendaftaran.syarat') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Syarat
                                     Pendaftaran</a>
                                 <a href="#"
@@ -327,7 +327,7 @@
                                 <a href="#"
                                     class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jadwal
                                     Kuliah</a>
-                                <a href="#"
+                                <a href="{{ route('pendaftaran.syarat') }}"
                                     class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Syarat
                                     Pendaftaran</a>
                                 <a href="#"
