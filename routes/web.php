@@ -17,6 +17,7 @@ use App\Http\Controllers\MitraController;
 use App\Http\Controllers\RisetPengabdianController;
 use App\Http\Controllers\ProsedurPendaftaranController;
 use App\Http\Controllers\SyaratPendaftaranController;
+use App\Http\Controllers\CaraPembayaranController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -94,5 +95,8 @@ Route::get('/pendaftaran/prosedur', [ProsedurPendaftaranController::class, 'inde
 
 // Route Halaman Syarat Pendaftaran
 Route::get('/pendaftaran/syarat', [SyaratPendaftaranController::class, 'index'])->name('pendaftaran.syarat');
+
+// Route Halaman Cara Pembayaran
+    Route::get('/pendaftaran/cara-pembayaran', [CaraPembayaranController::class, 'index'])->name('pendaftaran.pembayaran');
 
 require __DIR__.'/auth.php';
