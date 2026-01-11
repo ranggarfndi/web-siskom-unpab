@@ -165,7 +165,7 @@
                                 {{-- <a href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jurusan
                                     UNPAB</a> --}}
-                                <a href="#"
+                                <a href="{{ route('pendaftaran.prosedur') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Prosedur
                                     Pendaftaran</a>
                                 <a href="#"
@@ -321,7 +321,7 @@
                                 {{-- <a href="#"
                                     class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jurusan
                                     UNPAB</a> --}}
-                                <a href="#"
+                                <a href="{{ route('pendaftaran.prosedur') }}"
                                     class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Prosedur
                                     Pendaftaran</a>
                                 <a href="#"
