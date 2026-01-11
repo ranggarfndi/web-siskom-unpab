@@ -14,6 +14,7 @@ use App\Http\Controllers\SebaranMataKuliahController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\RisetPengabdianController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -82,5 +83,8 @@ Route::get('/profil/alumni', [AlumniController::class, 'index'])->name('alumni.i
 
 // Route Halaman Mitra
 Route::get('/profil/kemitraan', [MitraController::class, 'index'])->name('kemitraan.index');
+
+// Route Halaman Riset dan Pengabdian
+Route::get('/profil/riset-pengabdian', [RisetPengabdianController::class, 'index'])->name('riset-pengabdian.index');
 
 require __DIR__.'/auth.php';

@@ -80,7 +80,7 @@
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Alumni</a>
                                 <a href="{{ route('kontak.index') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Kontak</a>
-                                <a href="#"
+                                <a href="{{ route('riset-pengabdian.index') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Riset
                                     & Pengabdian</a>
                                 <a href="{{ route('kemitraan.index') }}"
@@ -263,8 +263,8 @@
                                     class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('alumni.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Alumni</a>
                                 <a href="{{ route('kontak.index') }}"
                                     class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('kontak.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Kontak</a>
-                                <a href="#"
-                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Riset
+                                <a href="{{ route('riset-pengabdian.index') }}"
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('riset-pengabdian.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Riset
                                     & Pengabdian</a>
                                 <a href="{{ route('kemitraan.index') }}"
                                     class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('kemitraan.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Kemitraan</a>
