@@ -12,7 +12,7 @@ use App\Http\Controllers\BiayaKuliahController;
 use App\Http\Controllers\ProspekKerjaController;
 use App\Http\Controllers\SebaranMataKuliahController;
 use App\Http\Controllers\StrukturOrganisasiController;
-use App\Http\Controllers\FasilitasUniversitasController;
+use App\Http\Controllers\AlumniController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -75,5 +75,8 @@ Route::get('/akademik/prospek-kerja-lulusan', [ProspekKerjaController::class, 'i
 
 // Route untuk Halaman Biaya Kuliah
 Route::get('/biaya-kuliah', [BiayaKuliahController::class, 'index'])->name('biaya-kuliah.index');
+
+// Route halaman Alumni
+Route::get('/profil/alumni', [AlumniController::class, 'index'])->name('alumni.index');
 
 require __DIR__.'/auth.php';
