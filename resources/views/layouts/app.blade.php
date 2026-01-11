@@ -45,7 +45,7 @@
                         </div>
 
                         <!-- Menu Item: Profil (Dropdown) -->
-                        @php $isProfilActive = request()->routeIs(['visi-misi.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
+                        @php $isProfilActive = request()->routeIs(['visi-misi.index', 'alumni.index', 'kemitraan.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
                         <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true"
                             @mouseleave="dropdownOpen = false" class="relative group">
                             <button
@@ -83,7 +83,7 @@
                                 <a href="#"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Riset
                                     & Pengabdian</a>
-                                <a href="#"
+                                <a href="{{ route('kemitraan.index') }}"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Kemitraan</a>
                             </div>
                         </div>
@@ -233,11 +233,11 @@
                     class="lg:hidden absolute top-full left-0 right-0 bg-white shadow-lg z-40"
                     @click.away="mobileMenuOpen = false" x-cloak>
                     <div class="pt-4 pb-4 space-y-1">
-                        <!-- Konten mobile menu disalin dari yang lama... -->
+                        
                         <a href="{{ route('beranda') }}"
                             class="block pl-4 pr-4 py-2 border-l-4 text-base font-medium {{ request()->routeIs('beranda') ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">Beranda</a>
 
-                        @php $isProfilActive = request()->routeIs(['visi-misi.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
+                        @php $isProfilActive = request()->routeIs(['visi-misi.index', 'alumni.index', 'struktur-organisasi.*', 'dosen-tetap.*', 'kontak.index']); @endphp
                         <div x-data="{ subOpen: {{ $isProfilActive ? 'true' : 'false' }} }">
                             <button @click="subOpen = !subOpen"
                                 class="w-full flex justify-between items-center pl-4 pr-4 py-2 border-l-4 text-base font-medium {{ $isProfilActive ? 'bg-purple-50 border-purple-600 text-purple-800' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800' }}">
@@ -260,14 +260,14 @@
                                     class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('dosen-tetap.*') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Dosen
                                     Tetap</a>
                                 <a href="{{ route('alumni.index') }}"
-                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Alumni</a>
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('alumni.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Alumni</a>
                                 <a href="{{ route('kontak.index') }}"
                                     class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('kontak.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Kontak</a>
                                 <a href="#"
                                     class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Riset
                                     & Pengabdian</a>
-                                <a href="#"
-                                    class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Kemitraan</a>
+                                <a href="{{ route('kemitraan.index') }}"
+                                    class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('kemitraan.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Kemitraan</a>
                             </div>
                         </div>
 
