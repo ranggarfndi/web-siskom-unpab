@@ -16,6 +16,7 @@ use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\RisetPengabdianController;
 use App\Http\Controllers\ProsedurPendaftaranController;
+use App\Http\Controllers\SyaratPendaftaranController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -90,5 +91,8 @@ Route::get('/profil/riset-pengabdian', [RisetPengabdianController::class, 'index
 
 // Route Halaman Prosedur Pendaftaran
 Route::get('/pendaftaran/prosedur', [ProsedurPendaftaranController::class, 'index'])->name('pendaftaran.prosedur');
+
+// Route Halaman Syarat Pendaftaran
+Route::get('/pendaftaran/syarat', [SyaratPendaftaranController::class, 'index'])->name('pendaftaran.syarat');
 
 require __DIR__.'/auth.php';
