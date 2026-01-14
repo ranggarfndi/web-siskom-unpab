@@ -15,7 +15,7 @@
                     <div class="space-y-4 text-gray-700 text-lg">
                         <p>
                             <strong class="text-gray-900">Alamat:</strong><br>
-                            Jl. Pendidikan No. 123, Medan, Sumatera Utara
+                            Jl. Gatot Subroto No.km, Simpang Tj., Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20122
                         </p>
                         <p>
                             <strong class="text-gray-900">Email:</strong><br>
@@ -36,16 +36,7 @@
                 <div>
                      <h2 class="text-2xl font-bold text-gray-800 mb-4">Lokasi Kami</h2>
                     <div class="mt-4">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.0163353457187!2d98.6568019749731!3d3.583493996388487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303131c158564a4d%3A0x63426786657682b1!2sUniversitas%20Sumatera%20Utara!5e0!3m2!1sen!2sid!4v1721577978252!5m2!1sen!2sid"
-                            width="100%" 
-                            height="350" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            class="rounded-lg shadow-md">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.4972265211373!2d98.64475926951617!3d3.590019038247472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312e3aa81119d9%3A0xb77bf04f1d46a342!2sUniversitas%20Pembangunan%20Panca%20Budi!5e0!3m2!1sen!2sid!4v1768405985237!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
