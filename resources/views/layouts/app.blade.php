@@ -68,7 +68,7 @@
                         </div>
 
                         <!-- Menu Item: Akademik (Dropdown) -->
-                        @php $isAkademikActive = request()->routeIs(['fasilitas.index', 'sebaran-matkul.index', 'prospek-kerja.index']); @endphp
+                        @php $isAkademikActive = request()->routeIs(['fasilitas.index', 'sebaran-matkul.index', 'prospek-kerja.index', 'capaian-lulusan.index']); @endphp
                         <div x-data="{ dropdownOpen: false }" @mouseenter="dropdownOpen = true" @mouseleave="dropdownOpen = false" class="relative group">
                             <button class="text-gray-700 hover:text-purple-700 transition duration-300 py-2 text-base flex items-center">
                                 <span>Akademik</span>
@@ -79,7 +79,7 @@
                             <div x-show="dropdownOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-95" class="absolute left-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20 origin-top-left">
                                 <a href="{{ route('fasilitas.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Fasilitas Program Studi</a>
                                 <a href="{{ route('sebaran-matkul.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Sebaran Mata Kuliah</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Capaian Profil Lulusan</a>
+                                <a href="{{ route('capaian-lulusan.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Capaian Profil Lulusan</a>
                                 <a href="{{ route('prospek-kerja.index') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Prospek Kerja Lulusan</a>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                             <div x-show="subOpen" x-transition class="pl-8 mt-1 space-y-1">
                                 <a href="{{ route('fasilitas.index') }}" class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('fasilitas.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Fasilitas Program Studi</a>
                                 <a href="{{ route('sebaran-matkul.index') }}" class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('sebaran-matkul.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Sebaran Mata Kuliah</a>
-                                <a href="#" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Capaian Profil Lulusan</a>
+                                <a href="{{ route('capaian-lulusan.index') }}" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Capaian Profil Lulusan</a>
                                 <a href="{{ route('prospek-kerja.index') }}" class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('prospek-kerja.index') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Prospek Kerja Lulusan</a>
                             </div>
                         </div>
@@ -407,7 +407,7 @@
                     // Akademik
                     { title: 'Fasilitas Program Studi', url: "{{ route('fasilitas.index') }}", category: 'Akademik' },
                     { title: 'Sebaran Mata Kuliah', url: "{{ route('sebaran-matkul.index') }}", category: 'Akademik' },
-                    { title: 'Capaian Profil Lulusan', url: "", category: 'Akademik' },
+                    { title: 'Capaian Profil Lulusan', url: "{{ route('capaian-lulusan.index') }}", category: 'Akademik' },
                     { title: 'Prospek Kerja Lulusan', url: "{{ route('prospek-kerja.index') }}", category: 'Akademik' },
                     
                     // Biaya Kuliah
