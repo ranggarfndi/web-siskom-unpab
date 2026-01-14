@@ -18,6 +18,7 @@ use App\Http\Controllers\RisetPengabdianController;
 use App\Http\Controllers\ProsedurPendaftaranController;
 use App\Http\Controllers\SyaratPendaftaranController;
 use App\Http\Controllers\CaraPembayaranController;
+use App\Http\Controllers\CapaianLulusanController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -97,6 +98,9 @@ Route::get('/pendaftaran/prosedur', [ProsedurPendaftaranController::class, 'inde
 Route::get('/pendaftaran/syarat', [SyaratPendaftaranController::class, 'index'])->name('pendaftaran.syarat');
 
 // Route Halaman Cara Pembayaran
-    Route::get('/pendaftaran/cara-pembayaran', [CaraPembayaranController::class, 'index'])->name('pendaftaran.pembayaran');
+Route::get('/pendaftaran/cara-pembayaran', [CaraPembayaranController::class, 'index'])->name('pendaftaran.pembayaran');
+
+// Route Halaman Capaian Profil Lulusan
+Route::get('/akademik/capaian-profil-lulusan', [CapaianLulusanController::class, 'index'])->name('capaian-lulusan.index');
 
 require __DIR__.'/auth.php';
