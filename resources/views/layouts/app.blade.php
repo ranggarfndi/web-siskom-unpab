@@ -100,7 +100,6 @@
                             <span class="absolute bottom-[-6px] left-0 h-0.5 bg-purple-700 transition-all duration-300 group-hover:w-full {{ $isPendaftaranActive ? 'w-full' : 'w-0' }}"></span>
                             
                             <div x-show="dropdownOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-95" class="absolute right-0 mt-2 py-2 px-2 w-56 bg-white rounded-lg shadow-xl z-20 origin-top-right">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jurusan UNPAB</a>
                                 <a href="{{ route('pendaftaran.prosedur') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Prosedur Pendaftaran</a>
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Jadwal Kuliah</a>
                                 <a href="{{ route('pendaftaran.syarat') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white rounded-md">Syarat Pendaftaran</a>
@@ -179,7 +178,6 @@
                                 <svg class="w-5 h-5 transition-transform" :class="{ 'rotate-180': subOpen }" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                             </button>
                             <div x-show="subOpen" x-transition class="pl-8 mt-1 space-y-1">
-                                <a href="#" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jurusan UNPAB</a>
                                 <a href="{{ route('pendaftaran.prosedur') }}" class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('pendaftaran.prosedur') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Prosedur Pendaftaran</a>
                                 <a href="#" class="block pl-3 pr-4 py-2 text-base font-medium text-gray-600 hover:bg-gray-100">Jadwal Kuliah</a>
                                 <a href="{{ route('pendaftaran.syarat') }}" class="block pl-3 pr-4 py-2 text-base font-medium {{ request()->routeIs('pendaftaran.syarat') ? 'bg-purple-100 text-purple-800' : 'text-gray-600 hover:bg-gray-100' }}">Syarat Pendaftaran</a>
@@ -275,7 +273,7 @@
             </svg>
         </a>
 
-        {{-- FOOTER (FIXED) --}}
+        {{-- FOOTER --}}
         <footer class="bg-gray-900 text-white">
             <!-- Main Footer Content -->
             <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
