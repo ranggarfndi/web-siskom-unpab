@@ -92,7 +92,7 @@
                 <div class="inline-block bg-purple-50 border border-purple-200 rounded-xl p-6">
                     <h3 class="text-lg font-bold text-gray-800 mb-2">Sudah melengkapi berkas?</h3>
                     <p class="text-gray-600 mb-6">Segera lakukan pendaftaran online atau kunjungi kampus kami.</p>
-                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-700 hover:bg-purple-800 transition duration-150 ease-in-out shadow-md">
+                    <a href="https://penmaru.pancabudi.ac.id/login/agt" target="blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-700 hover:bg-purple-800 transition duration-150 ease-in-out shadow-md">
                         Daftar Sekarang
                     </a>
                 </div>
