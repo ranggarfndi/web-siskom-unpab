@@ -68,11 +68,14 @@
                 </div>
 
                 {{-- Kolom Kanan: Peta (Dipercantik Frame-nya) --}}
-                <div class="bg-white p-2 rounded-2xl shadow-lg h-full min-h-[400px]">
+                {{-- Kolom Kanan: Peta (Responsive Fix) --}}
+                <div class="bg-white p-2 rounded-2xl shadow-lg flex flex-col h-full">
                     <h2 class="text-lg font-bold text-gray-800 mb-3 px-2 flex items-center">
                         <i class="fa-solid fa-map-location-dot mr-2 text-purple-600"></i> Lokasi Kami
                     </h2>
-                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.4972265211373!2d98.64475926951617!3d3.590019038247472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312e3aa81119d9%3A0xb77bf04f1d46a342!2sUniversitas%20Pembangunan%20Panca%20Budi!5e0!3m2!1sen!2sid!4v1768405985237!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="relative w-full h-64 sm:h-80 md:h-full md:min-h-[350px] rounded-xl overflow-hidden bg-gray-100">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d995.4972265211373!2d98.64475926951617!3d3.590019038247472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312e3aa81119d9%3A0xb77bf04f1d46a342!2sUniversitas%20Pembangunan%20Panca%20Budi!5e0!3m2!1sen!2sid!4v1768406564660!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
