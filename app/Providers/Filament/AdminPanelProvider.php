@@ -17,6 +17,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Enums\NavigationLayout;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -27,14 +28,25 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            // --- Kustomisasi Tampilan ---
+            // --- Kustomisasi Visual & Branding ---
             ->colors([
                 'primary' => Color::Purple, // Warna identitas Siskom
+                'gray' => Color::Slate,
             ])
-            ->brandName('Siskom UNPAB Admin')
+            ->font('Figtree')
+            ->brandName('Admin Siskom UNPAB')
+            ->brandLogo(asset('images/logo-unpab.png')) // Pastikan file ada
+            ->brandLogoHeight('2.5rem')
             ->favicon(asset('images/logo-unpab.png'))
+            // --- Pengaturan Sidebar & Navigasi ---
             ->sidebarCollapsibleOnDesktop()
-            // ---------------------------
+            ->navigationGroups([
+                'Konten Website',
+                'Data Akademik',
+                'Manajemen Sistem',
+            ])
+            ->breadcrumbs(true)
+            // -------------------------------------
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -43,7 +55,6 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                // Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
