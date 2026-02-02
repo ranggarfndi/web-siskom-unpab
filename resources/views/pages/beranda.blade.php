@@ -3,11 +3,12 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- Section 1: Interactive Welcome Hero -->
-    <div class="relative w-full h-screen bg-gray-900 flex items-center justify-center overflow-hidden">
+    <div class="relative w-full h-screen bg-gray-900 flex items-center justify-center overflow-hidden bg-cover bg-center" 
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('{{ asset('images/hero-pancabudi-1.jpg') }}');">
     
-    <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-purple-900/20 to-gray-900/90 z-0"></div>
-    
-    <div id="particles-js" class="absolute top-0 left-0 w-full h-full z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-purple-900/20 to-gray-900/90 z-0"></div>
+        
+        <div id="particles-js" class="absolute top-0 left-0 w-full h-full z-0"></div>
 
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
             
@@ -572,49 +573,49 @@
     </div>
 
     <!-- Section 8: Call to Action (CTA) -->
-    <div class="relative py-20 sm:py-24 bg-gradient-to-br from-purple-800 via-indigo-900 to-purple-900 overflow-hidden">
+    <div class="relative py-20 sm:py-24 bg-gray-900 overflow-hidden bg-cover bg-center" 
+    style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('{{ asset('images/hero-pancabudi.jpg') }}');">
     
-    <div class="absolute inset-0 opacity-10" 
-         style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(to right, #ffffff 1px, transparent 1px); background-size: 50px 50px;">
-    </div>
-    
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-purple-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
-
-    <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        
-        <div class="mb-6 animate-hero-down">
-            <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xl">
-                <i class="fa-solid fa-rocket text-2xl animate-pulse"></i>
-            </span>
+        <div class="absolute inset-0 opacity-10" 
+            style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(to right, #ffffff 1px, transparent 1px); background-size: 50px 50px;">
         </div>
-
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight">
-            Siap Menjadi Ahli <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">Teknologi Masa Depan?</span>
-        </h2>
         
-        <p class="mt-4 text-lg sm:text-xl text-purple-100 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-            Jangan biarkan potensi Anda menunggu. Bergabunglah dengan Sistem Komputer UNPAB dan mulailah perjalanan inovasi Anda hari ini.
-        </p>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-purple-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+        <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             
-            <a href="{{ route('pendaftaran.prosedur') }}" 
-               class="group relative inline-flex items-center justify-center bg-white text-purple-900 font-bold text-lg py-4 px-10 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105 transition-all duration-300">
-                <span class="absolute -inset-1 rounded-full border border-white/50 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
-                
-                <span class="relative flex items-center">
-                    Daftar Sekarang
-                    <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+            <div class="mb-6 animate-hero-down">
+                <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xl">
+                    <i class="fa-solid fa-rocket text-2xl animate-pulse"></i>
                 </span>
-            </a>
+            </div>
 
-            <a href="https://wa.me/6282304733646?text=Halo%20Kaprodi%20Siskom,%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank"
-               class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm">
-                <i class="fa-brands fa-whatsapp mr-2 text-xl"></i>
-                Konsultasi Dulu
-            </a>
-        </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                Siap Menjadi Ahli <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">Teknologi Masa Depan?</span>
+            </h2>
+            
+            <p class="mt-4 text-lg sm:text-xl text-purple-100 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                Jangan biarkan potensi Anda menunggu. Bergabunglah dengan Sistem Komputer UNPAB dan mulailah perjalanan inovasi Anda hari ini.
+            </p>
 
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+                
+                <a href="{{ route('pendaftaran.prosedur') }}" 
+                class="group relative inline-flex items-center justify-center bg-white text-purple-900 font-bold text-lg py-4 px-10 rounded-full shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:scale-105 transition-all duration-300">
+                    <span class="absolute -inset-1 rounded-full border border-white/50 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></span>
+                    
+                    <span class="relative flex items-center">
+                        Daftar Sekarang
+                        <i class="fa-solid fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                </a>
+
+                <a href="https://wa.me/6282304733646?text=Halo%20Kaprodi%20Siskom,%20saya%20ingin%20bertanya%20tentang%20pendaftaran." target="_blank"
+                class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm">
+                    <i class="fa-brands fa-whatsapp mr-2 text-xl"></i>
+                    Konsultasi
+                </a>
+            </div>
         </div>
     </div>
 

@@ -37,7 +37,7 @@
                             </div>
                             <div class="ml-4">
                                 <p class="font-bold text-gray-900">Email</p>
-                                <a href="mailto:info@siskom.ac.id" class="text-purple-700 hover:text-purple-900 transition mt-1 block">info@siskom.ac.id</a>
+                                <a href="mailto:kaprodi_siskom@pancabudi.ac.id" class="text-purple-700 hover:text-purple-900 transition mt-1 block">kaprodi_siskom@pancabudi.ac.id</a>
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                             </div>
                             <div class="ml-4">
                                 <p class="font-bold text-gray-900">Telepon</p>
-                                <p class="text-gray-600 mt-1">(061) 123-4567</p>
+                                <p class="text-gray-600 mt-1">+62 823-0473-3646</p>
                             </div>
                         </div>
 
@@ -59,8 +59,8 @@
                             </div>
                             <div class="ml-4">
                                 <p class="font-bold text-gray-900">WhatsApp</p>
-                                <a href="https://wa.me/6281234567890" target="_blank" class="text-purple-700 hover:text-purple-900 transition mt-1 block font-medium">
-                                    0812-3456-7890
+                                <a href="https://wa.me/6282304733646" target="_blank" class="text-purple-700 hover:text-purple-900 transition mt-1 block font-medium">
+                                    0823-0473-3646
                                 </a>
                             </div>
                         </div>

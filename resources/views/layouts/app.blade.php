@@ -133,13 +133,13 @@
                     <div class="flex items-center gap-2 lg:gap-3">
                         
                         <div class="hidden lg:flex items-center border-r border-gray-200 pr-3 gap-2">
-                            <a href="https://www.instagram.com/" target="_blank" class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 text-gray-500 hover:bg-pink-100 hover:text-pink-600 transition-all duration-300 shadow-sm" title="Instagram">
+                            <a href="https://www.instagram.com/siskom_unpab" target="_blank" class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 text-gray-500 hover:bg-pink-100 hover:text-pink-600 transition-all duration-300 shadow-sm" title="Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
-                            <a href="https://wa.me/6281234567890" target="_blank" class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 text-gray-500 hover:bg-green-100 hover:text-green-600 transition-all duration-300 shadow-sm" title="WhatsApp">
+                            <a href="https://wa.me/6282304733646" target="_blank" class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 text-gray-500 hover:bg-green-100 hover:text-green-600 transition-all duration-300 shadow-sm" title="WhatsApp">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
-                            <a href="mailto:info@siskom.ac.id" class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 text-gray-500 hover:bg-purple-100 hover:text-purple-600 transition-all duration-300 shadow-sm" title="Email">
+                            <a href="mailto:kaprodi_siskom@pancabudi.ac.id" class="w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 text-gray-500 hover:bg-purple-100 hover:text-purple-600 transition-all duration-300 shadow-sm" title="Email">
                                 <i class="fa-solid fa-envelope"></i>
                             </a>
                         </div>
@@ -206,9 +206,9 @@
                         </div>
                         
                         <div class="flex items-center justify-center space-x-6 py-4 border-t border-gray-100 mt-2">
-                             <a href="https://www.instagram.com/" class="text-gray-400 hover:text-pink-600"><i class="fa-brands fa-instagram text-2xl"></i></a>
-                             <a href="https://wa.me/6281234567890" class="text-gray-400 hover:text-green-600"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
-                             <a href="mailto:info@siskom.ac.id" class="text-gray-400 hover:text-purple-600"><i class="fa-solid fa-envelope text-2xl"></i></a>
+                             <a href="https://www.instagram.com/siskom_unpab" class="text-gray-400 hover:text-pink-600"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                             <a href="https://wa.me/6282304733646" class="text-gray-400 hover:text-green-600"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+                             <a href="mailto:kaprodi_siskom@pancabudi.ac.id" class="text-gray-400 hover:text-purple-600"><i class="fa-solid fa-envelope text-2xl"></i></a>
                         </div>
 
                         <div class="pt-2">
@@ -294,7 +294,7 @@
                         </p>
                         <div class="flex space-x-4">
                             <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-all duration-300"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-300"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/siskom_unpab" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-300"><i class="fa-brands fa-instagram"></i></a>
                             <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:text-white transition-all duration-300"><i class="fa-brands fa-youtube"></i></a>
                             <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
                         </div>
@@ -315,15 +315,15 @@
                         <ul class="space-y-4 text-gray-400">
                             <li class="flex items-start">
                                 <i class="fa-solid fa-location-dot mt-1.5 mr-3 text-purple-500"></i>
-                                <span>Jl. Jend. Gatot Subroto No. KM 4,5, Medan, Sumatera Utara</span>
+                                <span>Jl. Gatot Subroto No.km, Simpang Tj., Kec. Medan Sunggal, Kota Medan, Sumatera Utara 20122</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fa-solid fa-envelope mr-3 text-purple-500"></i>
-                                <a href="mailto:prodi_siskom@pancabudi.ac.id" class="hover:text-white transition">prodi_siskom@pancabudi.ac.id</a>
+                                <a href="mailto:kaprodi_siskom@pancabudi.ac.id" class="hover:text-white transition">kaprodi_siskom@pancabudi.ac.id</a>
                             </li>
                             <li class="flex items-center">
                                 <i class="fa-brands fa-whatsapp mr-3 text-purple-500"></i>
-                                <span>+62 812 3456 7890</span>
+                                <span>+62 823-0473-3646</span>
                             </li>
                         </ul>
                     </div>
