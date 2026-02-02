@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Sistem Komputer UNPAB') }}</title>
-    
+    <link rel="icon" type="image/png" href="{{ asset('images/logo-unpab.png') }}">
     <meta name="description" content="Program Studi Sistem Komputer UNPAB. Membentuk inovator teknologi masa depan.">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
